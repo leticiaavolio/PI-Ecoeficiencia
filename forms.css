@@ -1,0 +1,51 @@
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---Estilo h2 do cadastro e login */
+.form-container h2, .login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #005f73;
+}
+
+.form-container form label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-container form input,
+.form-container form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo dos Botões do cadastro e login */
+.form-container form button, .login-form form button{
+    width: 150px; 
+    padding: 8px 16px; 
+    background: #005f73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px; 
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block; /* Garantindo que o botão se comporte como um bloco */
+    margin: 20px auto 0; /* Centraliza o botão e adiciona um espaço acima dele */
+}
+
+.form-container form  button:hover, .login-form button:hover {
+    background: #0a9396;
+}
+
+
