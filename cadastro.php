@@ -1,18 +1,32 @@
-<div class="form-container">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <h2>Cadastro</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forms.css">
+    <title>Cadastrar Usuário</title>
+</head>
 
-    <form action="cadastro.php" method="post">
+<body>
+    <div class="form-container">
 
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        <label for="email">Email Educacional:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+        <h2>Cadastro</h2>
 
-        <button type="submit">Cadastrar</button>
+        <form action="cadastro.php" method="post">
 
-    </form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email Educacional:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <button type="submit">Cadastrar</button>
 
-</div>
+        </form>
+
+    </div>
+</body>
+
+</html>
