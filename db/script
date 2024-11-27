@@ -1,0 +1,38 @@
+USE bd_PIEcoeficiencia
+
+CREATE TABLE usuarios (
+idUsuario INT AUTO_INCREMENT NOT NULL,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(120) NOT NULL UNIQUE,
+senha VARCHAR(4) NOT NULL,
+perfil VARCHAR(20) NOT NULL,
+coin INT NOT NULL,
+CONSTRAINT PRIMARY KEY(idUsuario)
+);
+
+CREATE TABLE produtos(
+idProduto INT AUTO_INCREMENT NOT NULL,
+coin INT NOT NULL,
+categorias VARCHAR(40) NOT NULL,
+quantidade INT NOT NULL,
+CONSTRAINT PRIMARY KEY(idProduto)
+);
+
+CREATE TABLE doacao(
+idDoacao INT AUTO_INCREMENT NOT NULL,
+CONSTRAINT PRIMARY KEY(idDoacao),
+CONSTRAINT idUsuario FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario),
+);
+
+CREATE TABLE troca(
+idTroca INT AUTO_INCREMENT NOT NULL, 
+idUsuario INT NOT NULL,
+CONSTRAINT PRIMARY KEY(idTroca),
+CONSTRAINT fk_troca_usuario FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario),
+);
+
+CREATE TABLE doacao_produto(
+CONSTRAINT idDoacao FOREIGN KEY(idDoacao) REFERENCES doacao(idDoacao),
+CONSTRAINT idProduto FOREIGN KEY(idProduto) REFERENCES produtos(idProduto),
+quantidade INT NOT NULL,
+),
