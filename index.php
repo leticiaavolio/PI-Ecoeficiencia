@@ -23,7 +23,7 @@
         </div>
         <div class="main-content">
             <?php
-            $page = isset($_GET['page']) ? $_GET['page'] : 'cadastro';
+            $page = isset($_GET['page']) ? $_GET['page'] : 'login';
             include "$page.php";
             ?>
         </div>
