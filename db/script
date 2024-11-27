@@ -1,4 +1,6 @@
-USE bd_PIEcoeficiencia
+CREATE DATABASE bd_Ecoeficiencia;
+
+USE bd_Ecoeficiencia;
 
 CREATE TABLE usuarios (
 idUsuario INT AUTO_INCREMENT NOT NULL,
@@ -20,19 +22,30 @@ CONSTRAINT PRIMARY KEY(idProduto)
 
 CREATE TABLE doacao(
 idDoacao INT AUTO_INCREMENT NOT NULL,
+idUsuario INT NOT NULL,
 CONSTRAINT PRIMARY KEY(idDoacao),
-CONSTRAINT idUsuario FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario),
+CONSTRAINT fk_doacao_usuarios FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario)
 );
 
 CREATE TABLE troca(
 idTroca INT AUTO_INCREMENT NOT NULL, 
 idUsuario INT NOT NULL,
 CONSTRAINT PRIMARY KEY(idTroca),
-CONSTRAINT fk_troca_usuario FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario),
+CONSTRAINT fk_troca_usuarios FOREIGN KEY(idUsuario) REFERENCES usuarios(idUsuario)
 );
 
-CREATE TABLE doacao_produto(
-CONSTRAINT idDoacao FOREIGN KEY(idDoacao) REFERENCES doacao(idDoacao),
-CONSTRAINT idProduto FOREIGN KEY(idProduto) REFERENCES produtos(idProduto),
+CREATE TABLE doacaoProduto (
+idDoacao INT NOT NULL,
+idProduto INT NOT NULL,
 quantidade INT NOT NULL,
-),
+CONSTRAINT fk_doacaoProduto_doacao FOREIGN KEY (idDoacao) REFERENCES doacao (idDoacao),
+CONSTRAINT fk_doacaoProduto_produtos FOREIGN KEY (idProduto) REFERENCES produtos (idProduto)
+);
+
+CREATE TABLE trocaProduto (
+idTroca INT NOT NULL,
+idProduto INT NOT NULL,
+quantidade INT NOT NULL,
+CONSTRAINT fk_trocaProduto_troca FOREIGN KEY (idTroca) REFERENCES troca (idTroca),
+CONSTRAINT fk_trocaProduto_produtos FOREIGN KEY (idProduto) REFERENCES produtos (idProduto)
+);
