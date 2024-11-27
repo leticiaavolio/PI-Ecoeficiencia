@@ -12,10 +12,10 @@
             <img src="imgs/ecoeficiencia.png" alt="Programa Ecoeficiência" class="logo">
             <nav>
                 <ul>
-                    <li><a href="?page=troca">Login</a></li>
+                    <li><a href="?page=login">Login</a></li>
                     <li><a href="?page=cadastro">Cadastro de Usuários</a></li>
                     <li><a href="?page=doacao">Cadastro de Doação</a></li>
-                    <li><a href="?page=troca">Cadastro de Troca</a></li>
+                    <li><a href="?page=troca">Troca</a></li>
                     <li><a href="?page=troca">Visualizar Saldo</a></li>
                     <li><a href="?page=troca">Relatórios</a></li>
                 </ul>
