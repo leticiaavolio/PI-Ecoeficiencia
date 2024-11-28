@@ -21,3 +21,8 @@ SELECT COUNT(*) AS total_trocas FROM troca;
 /*Relatório: Quantidade de trocas por categoria*/
 SELECT p.categorias,COUNT(DISTINCT t.idTroca) AS total_trocas,SUM(tp.quantidade) AS total_itens_trocados
 FROM troca t JOIN trocaProduto tp ON t.idTroca = tp.idTroca JOIN produtos p ON tp.idProduto = p.idProduto GROUP BY p.categorias;
+
+/*Relatório de pessoas que mais doaram*/
+SELECT u.nome AS nome_usuario, SUM(dp.quantidade) AS total_quantidade_doada
+FROM usuarios u JOIN doacao d ON u.idUsuario = d.idUsuario JOIN doacaoProduto dp ON d.idDoacao = dp.idDoacao
+GROUP BY u.idUsuario, u.nome ORDER BY total_quantidade_doada DESC;
