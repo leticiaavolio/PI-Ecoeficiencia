@@ -14,7 +14,7 @@
     color: #005f73;
 }
 
-.form-container form label{
+.form-container form label, .form-container form select{
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
@@ -27,6 +27,7 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 /* Estilo dos Botões do cadastro e login */

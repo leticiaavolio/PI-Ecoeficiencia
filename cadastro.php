@@ -14,7 +14,12 @@
         <h2>Cadastro</h2>
 
         <form action="cadastro.php" method="post">
-
+            <select>
+                <option selected disabled value="">Selecionar Usuário</option>
+                <option value="colaborador">Colaboradores</option>
+                <option value="adm">Adm</option>
+                <option value="doador">Doador</option>
+            </select>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <label for="email">Email Educacional:</label>
