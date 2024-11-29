@@ -18,6 +18,7 @@
                     <li><a href="?page=troca">Troca</a></li>
                     <li><a href="?page=troca">Visualizar Saldo</a></li>
                     <li><a href="?page=troca">Relatórios</a></li>
+                    <li><a href="?page=logout">Sair</a></li>
                 </ul>
             </nav>
         </div>
