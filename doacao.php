@@ -1,3 +1,27 @@
+<?php 
+include conexao.php;
+
+    if ($_SERVER['REQUEST_METHOD' == "POST"]) 
+    {
+        $coin = mysqli_real_escape_string($conn, $_POST["coin"]);
+        $classificacao = mysqli_real_escape_string($conn, $_POST["categorias"]);
+        $quantidade = mysqli_real_escape_string($conn, $_POST["quantidade"]);
+
+
+        $sql = "INSERT INTO produtos (coin, categorias, quantidade) VALUES ('$coin', '$categorias', '$quantidade')";
+
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Doação cadastrada com sucesso!";
+        } 
+        else {
+            echo "Erro ao cadastrar doação: " . mysqli_error($conn);
+            }
+    }
+   
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,15 +37,28 @@
 
     <form action="doacao.php" method="post"> 
 
-        <label for="email">Email Educacional:</label> 
+        <label for="number">senacoins:</label> 
 
-        <input type="email" id="email" name="email" required> 
+        <input type="coin" id="coin" name="coin" required> 
 
  
 
         <label for="classificacao">Classificação do Objeto Doado:</label> 
 
-        <input type="text" id="classificacao" name="classificacao" required> 
+        <form action="index.php">
+            <select name="categorias" id="categorias">
+                <option selected disable value = ""> Selecionar categoria</option>
+                <option value="Acessorios">Acessorios -- 3 senacoins</option>
+                <option value="Livros/DVD/CD/Disco">Livros/ DVDs/ CD/ Disco -- 3 senacoins</option>
+                <option value="Utensilios de cozinha">Utensílios de cozinha -- 3 senacoins</option>                
+                <option value="Artigos de decoracao">Artigos de decoração -- 3 senacoins</option>
+                <option value="Vestuario e calçados">Vestuário e Calçados -- 5 senacoins</option>
+                <option value="Brinquedos e jogos">Brinquedos e jogos -- 5 senacoins</option>
+                <option value="Artigos automotivos">Artigos automotivos -- 6 senacoins</option>
+                <option value="Eletronicos/ Eletrodomesticos">Eletrônicos/ Eletrodomésticos -- 10 senacoins</option>
+                <option value="Mochilas">Mochilas -- 10 senacoins</option>
+            </select>
+        </form>
 
         <label for="quantidade">Quantidade:</label> 
 
