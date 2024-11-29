@@ -16,8 +16,8 @@
                     <li><a href="?page=cadastro">Cadastro de Usuários</a></li>
                     <li><a href="?page=doacao">Cadastro de Doação</a></li>
                     <li><a href="?page=troca">Troca</a></li>
-                    <li><a href="?page=troca">Visualizar Saldo</a></li>
-                    <li><a href="?page=troca">Relatórios</a></li>
+                    <li><a href="?page=verSaldo">Visualizar Saldo</a></li>
+                    <li><a href="?page=relatorio">Relatórios</a></li>
                     <li><a href="?page=logout">Sair</a></li>
                 </ul>
             </nav>

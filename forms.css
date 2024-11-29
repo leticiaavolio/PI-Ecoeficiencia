@@ -31,7 +31,7 @@
 }
 
 /* Estilo dos Botões do cadastro e login */
-.form-container form button, .login-form form button{
+.form-container button, .login-form form button{
     width: 150px; 
     padding: 8px 16px; 
     background: #005f73;
@@ -45,8 +45,16 @@
     margin: 20px auto 0; /* Centraliza o botão e adiciona um espaço acima dele */
 }
 
-.form-container form  button:hover, .login-form button:hover {
+.form-container  button:hover, .login-form button:hover {
     background: #0a9396;
 }
 
+.form-container img{
+    max-width: 100px;
+    justify-self: center;
+    align-self: center;
+}
 
+.form-container img:hover{
+    opacity: .5;
+}
