@@ -23,6 +23,13 @@
         </div>
         <div class="main-content">
             <?php
+            
+            // verifica se uma variável de query string chamada msg está presente na URL e, se estiver, se o valor dela é igual a 'OK'.
+            //Ser ambas condições forem verdadeiras exibe a mensagem "Cadastro realizado com Sucesso"
+            if (isset($_GET['msg']) && $_GET['msg'] == 'OK') {
+                echo "Cadastro realizado com Sucesso";
+            }
+            
             $page = isset($_GET['page']) ? $_GET['page'] : 'login';
             include "$page.php";
             ?>
