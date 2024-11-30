@@ -72,7 +72,6 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="forms.css">
 
     <title>Login Colaboradores</title>
@@ -85,7 +84,7 @@ $conn->close();
 
         <form method="post">
             <label for="login"></label>
-            <input placeholder="Email" id="login" name="login" required>
+            <input placeholder="Digite usuário de login" id="login" name="login" required>
             <label for="senha"></label>
             <input type="password" placeholder="Senha" id="senha" name="senha" required>
             <button type="submit">Entrar</button>
