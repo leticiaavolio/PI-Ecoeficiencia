@@ -20,25 +20,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT * FROM usuarios WHERE email = '$login'";
     $result = $conn->query($sql);
 
+    // Verifica se a consulta retornou algum resultado (ou seja, se o usuário foi encontrado no banco de dados)
     if ($result->num_rows > 0) {
-        // Usuário encontrado
+        // Usuário encontrado no banco de dados
         $usuario = $result->fetch_assoc();
 
         // Verifica se a senha fornecida corresponde ao hash no banco de dados
         if (password_verify($senha, $usuario['senha'])) {
+        // A função password_verify() verifica se a senha fornecida ($senha) corresponde ao hash armazenado no banco ($usuario['senha'])
+        // Se a senha estiver correta, entra no bloco de código abaixo para redirecionar o usuário conforme o perfil
+
             // A senha está correta, redireciona conforme o perfil
             switch ($usuario['perfil']) {
                 case 'colaborador':
+
+                    // Armazena as informações do usuário na sessão
                     $_SESSION['usuario_id'] = ($usuario['idUsuario']);
                     $_SESSION['perfil'] = ($usuario['perfil']);
                     $_SESSION['login'] = ($usuario['email']);
+                    // Redireciona o usuário para a página de doação
                     header("Location: index.php?page=doacao"); 
+                     // Interrompe a execução do script para garantir que o redirecionamento ocorra imediatamente
                     exit();
                     
                 case 'adm':
-                    $_SESSION['usuario_id'] = ($usuario['idUsuario']);
-                    $_SESSION['perfil'] = ($usuario['perfil']);
-                    $_SESSION['login'] = ($usuario['email']);
+                    $_SESSION['usuario_id'] = ($usuario['idUsuario']); // Armazena o ID do usuário na sessão
+                    $_SESSION['perfil'] = ($usuario['perfil']);// Armazena o perfil do usuário na sessão
+                    $_SESSION['login'] = ($usuario['email']); // Armazena o email (login) do usuário na sessão
                     header("Location: index.php?page=relatorio"); 
                     exit();
                 case 'doador':

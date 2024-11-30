@@ -1,21 +1,30 @@
 <?php
+
 // Incluindo a conexão com o banco de dados
 include('conexao.php');
 
-// Iniciar a sessão para pegar o ID do usuário, se necessário
 session_start();
+
+if(!isset($_SESSION['usuario_id'])){
+
+    header("Location: index.php ");
+    exit;
+
+} 
+// Iniciar a sessão para pegar o ID do usuário, se necessário
+
 
 // Variável para armazenar o saldo
 $saldo = 0;
 
 // Verificar o email do usuário logado (ou outra identificação)
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
+if (isset($_SESSION['login'])) {
+    $login = $_SESSION['login'];
 
     // Consulta para buscar o saldo (coin) do usuário
     $query = "SELECT coin FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $login);
     $stmt->execute();
     $stmt->bind_result($saldo);
     $stmt->fetch();
