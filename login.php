@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    
     // Proteção contra injeção SQL
-    $email = $conn->real_escape_string($login);
+    $login = $conn->real_escape_string($login);
     $senha = $conn->real_escape_string($senha);
 
     // Query para verificar o email
@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
            
         } else {
-            echo "E-mail ou senha inválidos.";
+            echo "Login ou senha inválidos.";
         }
     } else {
-        echo "E-mail ou senha inválidos.";
+        echo "Login ou senha inválidos.";
     }
 }
 
