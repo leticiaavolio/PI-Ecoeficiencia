@@ -1,9 +1,10 @@
 <?php
-session_start();
 include 'conexao.php';
+session_start();
 
 
-    session_start();
+
+    
     // Inicia a verificação da sessão para garantir que o usuário esteja logado e tenha um perfil válido.
     if(!isset($_SESSION['usuario_id']) || !isset($_SESSION['perfil'])) {
         // Se a variável de sessão 'usuario_id' ou 'perfil' não estiverem definidas, o usuário não está logado ou não tem perfil
@@ -62,7 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     } else {
         // Se a senha não for válida, exiba uma mensagem de erro
-        echo "A senha deve ter exatamente 4 dígitos numéricos.";
+        
+        header('Location: index.php?page=cadastro&msg=erro&num=1');
+        exit;
     }
 }
 ?>
