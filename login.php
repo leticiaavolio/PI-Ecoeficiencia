@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // A senha está correta, redireciona conforme o perfil
             switch ($usuario['perfil']) {
                 case 'colaborador':
-                    $_SESSION['usuario_id'] = ($usuario['idUsuario']);
-                    $_SESSION['perfil'] = ($usuario['perfil']);
-                    $_SESSION['login'] = ($usuario['email']);
+                    $_SESSION['usuario_id'] = ($usuario['idUsuario']); ; // Armazena o ID do usuário na sessão
+                    $_SESSION['perfil'] = ($usuario['perfil']);// Armazena o perfil do usuário na sessão
+                    $_SESSION['login'] = ($usuario['email']); // Armazena o email (login) do usuário na sessão
                     header("Location: index.php?page=doacao"); 
                     exit();
                     
