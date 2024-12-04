@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <label for="login">Login:</label>
             <input placeholder="Nome mais iniciais do Sobrenome Ex Paulo.sca" id="login" name="login" required>
             <label for="senha">Senha:</label>
-            <input placeholder="Senha númerica, apenas 4 dígitos" type="password" id="senha" name="senha" required>
+            <input placeholder="Senha númerica. Digite os 4 últimos dígitos  do celular " type="password" id="senha" name="senha" required>
             <button type="submit">Cadastrar</button>
 
         </form>
