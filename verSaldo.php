@@ -9,13 +9,13 @@ session_start();
 $saldo = 0;
 
 // Verificar o email do usuário logado (ou outra identificação)
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
+if (isset($_SESSION['login'])) {
+    $login = $_SESSION['login'];
 
     // Consulta para buscar o saldo (coin) do usuário
     $query = "SELECT coin FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $login);
     $stmt->execute();
     $stmt->bind_result($saldo);
     $stmt->fetch();
