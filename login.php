@@ -32,13 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['usuario_id'] = ($usuario['idUsuario']); ; // Armazena o ID do usuário na sessão
                     $_SESSION['perfil'] = ($usuario['perfil']);// Armazena o perfil do usuário na sessão
                     $_SESSION['login'] = ($usuario['email']); // Armazena o email (login) do usuário na sessão
+                    setcookie("user_name", $_SESSION['login'], time() + (86400 * 30));
+
                     header("Location: index.php?page=doacao"); 
+
                     exit();
                     
                 case 'adm':
                     $_SESSION['usuario_id'] = ($usuario['idUsuario']);
                     $_SESSION['perfil'] = ($usuario['perfil']);
                     $_SESSION['login'] = ($usuario['email']);
+                    setcookie("user_name", $_SESSION['login'], time() + (86400 * 30));
                     header("Location: index.php?page=relatorio"); 
                     exit();
                 case 'doador':
@@ -46,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['usuario_id'] = ($usuario['idUsuario']);
                     $_SESSION['perfil'] = ($usuario['perfil']);
                     $_SESSION['login'] = ($usuario['email']);
+                    setcookie("user_name", $_SESSION['login'], time() + (86400 * 30));
                     header("Location: index.php?page=verSaldo");                     
                     exit();
                 default:

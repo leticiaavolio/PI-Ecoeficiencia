@@ -17,15 +17,14 @@
     <div class="container">
         <div class="sidebar">
             <img src="imgs/ecoeficiencia.png" alt="Programa Ecoeficiência" class="logo">
-            <span>
-                
-                <?php
-                    echo isset($_SESSION['login'])? $_SESSION['login']:"";
-                
-                    
-                ?>
 
-            </span>
+
+          
+            <?php echo isset($_COOKIE['user_name'])?  "Logado " . $_COOKIE['user_name']:""; ?>   
+                    
+            
+
+
 
             <nav>
                 <ul>
